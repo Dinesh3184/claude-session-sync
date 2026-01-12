@@ -1,0 +1,18 @@
+{
+  "name": "session-sync",
+  "description": "Cross-device synchronization for Claude Code sessions and settings via iCloud Drive",
+  "version": "1.0.0",
+  "author": {
+    "name": "Rod Christiansen",
+    "url": "https://github.com/rodchristiansen"
+  },
+  "repository": "https://github.com/rodchristiansen/claude-session-sync",
+  "keywords": [
+    "sync",
+    "sessions",
+    "settings",
+    "icloud",
+    "cross-device",
+    "backup"
+  ]
+}
